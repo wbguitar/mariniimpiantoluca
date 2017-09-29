@@ -1,1 +1,7 @@
 E:\AeL\Projects\CSharp\MariniImpiantoLuca\MariniImpiantoLuca\bin\Debug\MariniImpiantoLuca.exe.config
+E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoLuca\bin\Debug\MariniImpiantoLuca.exe.config
+E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoLuca\bin\Debug\MariniImpiantoLuca.exe
+E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoLuca\bin\Debug\MariniImpiantoLuca.pdb
+E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoLuca\obj\Debug\MariniImpiantoLuca.csprojResolveAssemblyReference.cache
+E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoLuca\obj\Debug\MariniImpiantoLuca.exe
+E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoLuca\obj\Debug\MariniImpiantoLuca.pdb

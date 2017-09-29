@@ -13,6 +13,8 @@ using System.Xml.Serialization;
 // Libreria per far funzionare l'attributo [CallerMemberName] presente nella OnPropertyChanged(…).
 // In questo modo non ci si deve più preoccupare di rinominare le proprietà.
 using System.Runtime.CompilerServices;
+// Libreria per la gestione dei file XML. Permette di usare classi come XmlAttributeCollection, XmlNode, ...;
+using System.Xml;
 
 namespace MariniImpiantoDataModel
 {
@@ -36,7 +38,7 @@ namespace MariniImpiantoDataModel
         //[System.Xml.Serialization.XmlElementAttribute("type")]
         private string _type;
         /// <summary>
-        /// Gets and Sets the type of an object
+        /// Gets and Sets the type of an object (Impianto, Nastro, Motote,...)
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
         public string type { get { return _type; } set { _type = value; } }
@@ -54,7 +56,7 @@ namespace MariniImpiantoDataModel
         /// Gets and Sets the name of an object
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
-        public string name { get { return _name; } set { SetField(ref _name, value); } }
+        public string name { get { return _name; } set { _name = value; } }
 
         //[System.Xml.Serialization.XmlElementAttribute("id")]
         private string _path;
@@ -76,22 +78,16 @@ namespace MariniImpiantoDataModel
         /// Gets and Sets the handler method of an object propertychanged event
         /// </summary>
         [System.Xml.Serialization.XmlAttribute]
-        public string handler { get { return _handler; } set { SetField(ref _handler, value); } }
+        public string handler { get { return _handler; } set { _handler = value; } }
 
-        private readonly List<MariniGenericObject> _listaGenericObject = new List<MariniGenericObject>();
+        private readonly List<MariniGenericObject> _childList = new List<MariniGenericObject>();
         /// <summary>
         /// Gets the list of children objects
         /// </summary>
-        /*
-        [XmlElement("Impianto", Type = typeof(MariniImpianto))]
-        [XmlElement("ZonaPredosaggio", Type = typeof(MariniZonaPredosaggio))]
-        [XmlElement("Predosatore", Type = typeof(MariniPredosatore))]
-        [XmlElement("Bilancia", Type = typeof(MariniBilancia))]
-        [XmlElement("Nastro", Type = typeof(MariniNastro))]
-        */
+        // TODO: Vanno aggiunti gli elementi presenti nella serializzazione.
         [XmlElement("Property", Type = typeof(MariniProperty))]
-        [XmlElement("oggettobase", Type = typeof(MariniOggettoBase))]
-        public List<MariniGenericObject> ListaGenericObject { get { return _listaGenericObject; } }
+        [XmlElement("oggettobase", Type = typeof(MariniBaseObject))]
+        public List<MariniGenericObject> ChildList { get { return _childList; } }
 
         /// <summary>
         /// Threadsafe implementation of the event <see cref="MariniGenericObject.OnPropertyChanged"/>
@@ -101,7 +97,6 @@ namespace MariniImpiantoDataModel
         #endregion
 
         #region events
-        
         
 
         // By default the event implementation is not threadsafe.
@@ -148,8 +143,6 @@ namespace MariniImpiantoDataModel
             }
         }
 
-
-        //protected bool SetField<T>(ref T field, T value, string propertyName)
         /// <summary>
         /// Used in every property set to launch <see cref="MariniGenericObject.OnPropertyChanged"/>
         /// </summary>
@@ -164,13 +157,13 @@ namespace MariniImpiantoDataModel
             {
                 if (EqualityComparer<T>.Default.Equals(field, value))
                 {
-                    //Console.WriteLine("Sono nella SetField e la proprieta' non e' cambiata");
+                    Console.WriteLine("Sono nella SetField e la proprieta' non e' cambiata");
                     return false;
                 }
                 field = value;
             }
 
-            //Console.WriteLine("Sono nella SetField e lancio OnPropertyChanged(propertyName)");
+            Console.WriteLine("Sono nella SetField e lancio OnPropertyChanged(propertyName)");
             OnPropertyChanged(propertyName);
 
             return true;
@@ -184,13 +177,15 @@ namespace MariniImpiantoDataModel
         /// Initializes a new instance of the <see cref="MariniGenericObject"/> class.
         /// </summary>
         /// <param name="parent">MariniGenericObject parent</param>
+        /// <param name="type">MariniGenericObject ID</param>
         /// <param name="id">MariniGenericObject ID</param>
         /// <param name="name">MariniGenericObject name</param>
         /// <param name="description">MariniGenericObject description</param>
         /// <param name="handler">MariniGenericObject method name to handle the PropertyChange event</param>
-        protected MariniGenericObject(MariniGenericObject parent, string id, string name, string description, string handler)
+        protected MariniGenericObject(MariniGenericObject parent, string type, string id, string name, string description, string handler)
         {
             this.parent = parent;
+            this.type = type;
             this.id = id;
             this.name = name;
             this.description = description;
@@ -203,11 +198,12 @@ namespace MariniImpiantoDataModel
         /// Initializes a new instance of the <see cref="MariniGenericObject"/> class.
         /// </summary>
         /// <param name="parent">MariniGenericObject parent</param>
+        /// <param name="type">MariniGenericObject ID</param>
         /// <param name="id">MariniGenericObject ID</param>
         /// <param name="name">MariniGenericObject name</param>
         /// <param name="description"></param>
-        protected MariniGenericObject(MariniGenericObject parent, string id, string name, string description)
-            : this(parent, id, name, description, "NO_HANDLER")
+        protected MariniGenericObject(MariniGenericObject parent, string type, string id, string name, string description)
+            : this(parent, type, id, name, description, "NO_HANDLER")
         {
         }
 
@@ -215,10 +211,11 @@ namespace MariniImpiantoDataModel
         /// Initializes a new instance of the <see cref="MariniGenericObject"/> class.
         /// </summary>
         /// <param name="parent">MariniGenericObject parent</param>
+        /// <param name="type">MariniGenericObject ID</param>
         /// <param name="id">MariniGenericObject ID</param>
         /// <param name="name">MariniGenericObject name</param>
-        protected MariniGenericObject(MariniGenericObject parent, string id, string name)
-            : this(parent, id, name, "NO_DESCRIPTION")
+        protected MariniGenericObject(MariniGenericObject parent, string type, string id, string name)
+            : this(parent, type, id, name, "NO_DESCRIPTION")
         {
         }
 
@@ -226,9 +223,20 @@ namespace MariniImpiantoDataModel
         /// Initializes a new instance of the <see cref="MariniGenericObject"/> class.
         /// </summary>
         /// <param name="parent">MariniGenericObject parent</param>
+        /// <param name="type">MariniGenericObject ID</param>
         /// <param name="id">MariniGenericObject ID</param>
-        protected MariniGenericObject(MariniGenericObject parent, string id)
-            : this(parent, id, "NO_NAME")
+        protected MariniGenericObject(MariniGenericObject parent, string type, string id)
+            : this(parent, type, id, "NO_NAME")
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MariniGenericObject"/> class.
+        /// </summary>
+        /// <param name="parent">MariniGenericObject parent</param>
+        /// <param name="type">MariniGenericObject ID</param>
+        protected MariniGenericObject(MariniGenericObject parent, string type)
+            : this(parent, type, "NO_ID")
         {
         }
 
@@ -237,7 +245,7 @@ namespace MariniImpiantoDataModel
         /// </summary>
         /// <param name="parent">MariniGenericObject parent</param>
         protected MariniGenericObject(MariniGenericObject parent)
-            : this(parent, "NO_ID")
+            : this(parent, "NO_TYPE")
         {
         }
 
@@ -245,7 +253,7 @@ namespace MariniImpiantoDataModel
         /// Initializes a new instance of the <see cref="MariniGenericObject"/> class.
         /// </summary>
         protected MariniGenericObject()
-            : this(null, "NO_ID")
+            : this(null, "NO_TYPE")
         {
         }
 
@@ -257,6 +265,9 @@ namespace MariniImpiantoDataModel
         protected MariniGenericObject(MariniGenericObject parent, XmlNode node)
             : this(parent)
         {
+            // L'attributo type viene ricavato dal nome del nodo
+            type = node.Name;
+            // Gli altri attributi della classe li ricavo dalle altri attributi dell'XML
             if (node.Attributes != null)
             {
                 XmlAttributeCollection attrs = node.Attributes;
@@ -266,6 +277,9 @@ namespace MariniImpiantoDataModel
 
                     switch (attr.Name)
                     {
+                        //case "type":
+                        //    type = attr.Value;
+                        //    break;
                         case "id":
                             id = attr.Value;
                             break;
@@ -278,16 +292,19 @@ namespace MariniImpiantoDataModel
                         case "handler":
                             handler = attr.Value;
                             break;
-                        //default:
-                        //    throw new ApplicationException(string.Format("MariniObject '{0}' cannot be created", mgo));
+                        // default:
+                        // throw new ApplicationException(string.Format("MariniObject '{0}' cannot be created", mgo));
                     }
                 }
             }
-
+            // calcolo il path dell'oggetto
             SetObjPath(parent);
-
         }
 
+        /// <summary>
+        /// Initializes the object path for the MariniGenericObject <see cref="MariniGenericObject"/> class.
+        /// </summary>
+        /// <param name="node">An Xml node from which to construct the object</param>
         private void SetObjPath(MariniGenericObject parent)
         {
             if (parent == null)
@@ -312,6 +329,10 @@ namespace MariniImpiantoDataModel
         #endregion
 
         #region Methods
+        
+        // TODO: attenzione anche ai metodi. Quali metodi e' corretto lasciare all'interno dell'oggetto e
+        // quali invece e' bene far gestire a agenti esterni, facendo dell'oggetto un puro modello di dati?
+
 
         /// <summary>
         /// Plain description of the MariniGenericObject.
@@ -324,13 +345,18 @@ namespace MariniImpiantoDataModel
         public void ToPlainTextRecursive()
         {
             ToPlainText();
-            foreach (MariniGenericObject mgo in _listaGenericObject)
+            foreach (MariniGenericObject mgo in _childList)
             {
                 mgo.ToPlainTextRecursive();
             }
             return;
         }
 
+
+        // TODO: magari da spostare in un eventuale altro oggetto agente che faccia cose
+        // sul data model???
+
+        /*
         /// <summary>
         /// Retrieve the MariniPlctag bound to the property prop_name
         /// </summary>
@@ -349,9 +375,12 @@ namespace MariniImpiantoDataModel
                 .Cast<MariniPlctag>()
                 .FirstOrDefault(mp => mp.parent_property_bind == prop_name);
         }
+        */
 
+        // TODO: magari da spostare in un eventuale altro oggetto agente che faccia cose
+        // sul data model???
 
-
+        /*
         /// <summary>
         /// Retrieve the child with the given ID
         /// </summary>
@@ -363,7 +392,7 @@ namespace MariniImpiantoDataModel
             _GetObjectById(id, ref mgo);
             return mgo;
         }
-
+                
         private void _GetObjectById(string id, ref MariniGenericObject mgo)
         {
             if (this.id == id)
@@ -382,11 +411,16 @@ namespace MariniImpiantoDataModel
                 }
             }
         }
+        */
 
+        // TODO: magari da spostare in un eventuale altro oggetto agente che faccia cose
+        // sul data model???
+
+        /*
         /// <summary>
-        /// Retrieve the child with the given ID
+        /// Retrieve the child with the given Path
         /// </summary>
-        /// <param name="id">MariniGenericObject ID</param>
+        /// <param name="path">MariniGenericObject Path</param>
         /// <returns>The MariniGenericObject or null if not found</returns>
         public MariniGenericObject GetObjectByPath(string path)
         {
@@ -413,12 +447,13 @@ namespace MariniImpiantoDataModel
                 }
             }
         }
+        */
 
 
+        // TODO: magari da spostare in un eventuale altro oggetto agente che faccia cose
+        // sul data model???
 
-
-
-
+        /*
         /// <summary>
         /// Retrieve a list of MariniGenericObject child of a specific type
         /// </summary>
@@ -447,7 +482,12 @@ namespace MariniImpiantoDataModel
                 }
             }
         }
+        */
 
+        // TODO: magari da spostare in un eventuale altro oggetto agente che faccia cose
+        // sul data model???
+
+        /*
         /// <summary>
         /// Retrieve a dictionary of MariniGenericObject children
         /// </summary>
@@ -470,10 +510,12 @@ namespace MariniImpiantoDataModel
                 }
             }
         }
+        */
 
+        // TODO: magari da spostare in un eventuale altro oggetto agente che faccia cose
+        // sul data model???
 
-
-
+        /*
         /// <summary>
         /// Retrieve a dictionary of MariniGenericObject children
         /// </summary>
@@ -496,7 +538,7 @@ namespace MariniImpiantoDataModel
                 }
             }
         }
-
+        */
 
 
 
