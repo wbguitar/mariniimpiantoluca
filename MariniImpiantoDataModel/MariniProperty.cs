@@ -60,11 +60,13 @@ namespace MariniImpiantoDataModel
         {
             if (node.Attributes != null)
             {
+                string _s = "";
                 XmlAttributeCollection attrs = node.Attributes;
+                value = null;
                 foreach (XmlAttribute attr in attrs)
                 {
                     //Console.WriteLine("Attribute Name = " + attr.Name + "; Attribute Value = " + attr.Value);
-
+                    
                     switch (attr.Name)
                     {
 
@@ -84,10 +86,14 @@ namespace MariniImpiantoDataModel
                             propertytype = (MariniPropertyTypeEnum)Enum.Parse(typeof(MariniPropertyTypeEnum), attr.Value, true);
                             break;
                         case "value":
-                            value = ParsePropertyValue(propertytype, attr.Value);
+                            _s = attr.Value;
                             break;
                     }
+                    
                 }
+
+                if (!string.IsNullOrEmpty(_s))
+                    value = ParsePropertyValue(propertytype, _s);
             }
         }
 
@@ -117,17 +123,26 @@ namespace MariniImpiantoDataModel
 
         private object ParsePropertyValue(MariniPropertyTypeEnum type, string Value)
         {
-            switch (type)
+            try
             {
-                case MariniPropertyTypeEnum.Bool: return bool.Parse(Value);
-                case MariniPropertyTypeEnum.Byte: return Byte.Parse(Value);
-                case MariniPropertyTypeEnum.Dint: return int.Parse(Value);
-                case MariniPropertyTypeEnum.Int: return int.Parse(Value);
-                case MariniPropertyTypeEnum.Long: return int.Parse(Value);
-                case MariniPropertyTypeEnum.Real: return int.Parse(Value);
-                case MariniPropertyTypeEnum.Word: return short.Parse(Value);
+                switch (type)
+                {
+                    case MariniPropertyTypeEnum.Bool: return bool.Parse(Value);
+                    case MariniPropertyTypeEnum.Byte: return Byte.Parse(Value);
+                    case MariniPropertyTypeEnum.Dint: return int.Parse(Value);
+                    case MariniPropertyTypeEnum.Int: return int.Parse(Value);
+                    case MariniPropertyTypeEnum.Long: return int.Parse(Value);
+                    case MariniPropertyTypeEnum.Real: return int.Parse(Value);
+                    case MariniPropertyTypeEnum.Word: return short.Parse(Value);
+                }
+
             }
-            throw new Exception(String.Format("Errore in ParsePropertyValue({0},{1})", type, Value));
+            catch (Exception e)
+            {
+
+                throw new Exception(String.Format( "Errore in ParsePropertyValue({0},{1}): parse non riuscito", type, Value), e);
+            }
+            throw new Exception(String.Format("Errore in ParsePropertyValue({0},{1}): passato un type {0} non gestito", type, Value));
         }
 
         //protected bool SetField<T>(ref T field, T value, string propertyName)

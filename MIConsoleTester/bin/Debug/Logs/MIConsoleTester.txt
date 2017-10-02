@@ -671,3 +671,58 @@ INFO  2017-09-29 16:22:45,434 [9    ] MIConsoleTester.Program                  -
 INFO  2017-09-29 16:22:46,223 [9    ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio ToPlainTextRecursive()
 INFO  2017-09-29 16:22:46,242 [9    ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Fine ToPlainTextRecursive()
 
+INFO  2017-10-02 14:43:48,166 [9    ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 14:43:48,181 [9    ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 14:44:06,973 [9    ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 14:44:06,988 [9    ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 14:53:47,052 [9    ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 14:53:47,052 [9    ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 14:55:02,851 [10   ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 14:55:02,867 [10   ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 14:57:01,270 [9    ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 14:57:01,270 [9    ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 15:00:28,477 [10   ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 15:00:28,492 [10   ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 15:02:39,618 [10   ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 15:02:39,618 [10   ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 15:05:43,770 [10   ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 15:05:43,801 [10   ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 15:05:59,038 [9    ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 15:05:59,054 [9    ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 15:06:46,185 [10   ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 15:06:46,185 [10   ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 15:18:54,181 [10   ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 15:18:54,190 [10   ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 15:20:34,935 [10   ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 15:20:34,951 [10   ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 15:21:10,889 [9    ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 15:21:10,904 [9    ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 15:23:11,213 [10   ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 15:23:11,223 [10   ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 15:28:51,580 [10   ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 15:28:51,595 [10   ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 15:30:32,850 [9    ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 15:30:32,881 [9    ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 15:32:40,231 [9    ] MIConsoleTester.Program                  - <<<<<<<<<< TEST STARTED >>>>>>>>>>
+
+INFO  2017-10-02 15:32:40,231 [9    ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio Creazione
+INFO  2017-10-02 15:32:40,575 [9    ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Fine Creazione
+INFO  2017-10-02 15:33:31,928 [9    ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Inizio ToPlainTextRecursive()
+INFO  2017-10-02 15:33:31,959 [9    ] MIConsoleTester.Program                  - MariniImpiantoDataManager - Fine ToPlainTextRecursive()
+

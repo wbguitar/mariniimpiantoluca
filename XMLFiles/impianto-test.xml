@@ -14,7 +14,7 @@
         <Property id="Comando"              name="Comando"             propertytype="Bool" bind="PLCTAG_NM_CMD_SemiAuto_3"              bindtype="PLCTag" binddirection="OneWayToSource" handler="MotorePropertyHandler"/>
         <Property id="Set"                  name="Set"                 propertytype="Int"  bind="PLCTAG_AO_SetMotore03"                 bindtype="PLCTag" binddirection="OneWayToSource"  handler="MotorePropertyHandler"/>
         <Property id="Ritorno"              name="Ritorno"             propertytype="Bool" bind="PLCTAG_NM_Ritorno_3"                   bindtype="PLCTag" binddirection="OneWay"  handler="MotorePropertyHandler"/>
-        <Property id="Allarme"              name="Allarme"       value="false"      propertytype="Int"  bind="PLCTAG_NM_AllarmeMotore_3"             bindtype="PLCTag" binddirection="OneWay" handler="MotoreAlarmHandler"/>
+        <Property id="Allarme"              name="Allarme"       value="false"      propertytype="Bool"  bind="PLCTAG_NM_AllarmeMotore_3"             bindtype="PLCTag" binddirection="OneWay" handler="MotoreAlarmHandler"/>
         <Property id="Blocco"               name="Blocco"              propertytype="Bool" bind="PLCTAG_NM_BloccoMotore_3"              bindtype="PLCTag" binddirection="OneWay" handler="MotorePropertyHandler"/>
         <Property id="AccesoForzato"        name="AccesoForzato"       propertytype="Bool" bind="PLCTAG_NM_AccesoForzatoPLC_3"          bindtype="PLCTag" binddirection="OneWay" handler="MotorePropertyHandler"/>
         <Property id="SpentoForzato"        name="SpentoForzato"       propertytype="Bool" bind="PLCTAG_NM_SpentoForzatoPLC_3"          bindtype="PLCTag" binddirection="OneWay" handler="MotorePropertyHandler"/>
@@ -24,7 +24,7 @@
 
       <Property id="Ritorno"        name="Ritorno"        propertytype="Bool" bind="PLCTAG_DI_RitPredosatore1"         bindtype="PLCTag" binddirection="OneWay"/>
       <Property id="Termica"        name="Termica"        propertytype="Bool" bind="PLCTAG_DI_TermPredosatore1"        bindtype="PLCTag" binddirection="OneWay"/>
-      <Property id="Allarme"        name="Allarme"        value="false"  propertytype="Bool" bind="PLCTAG_DI_AllPred1"                bindtype="PLCTag" binddirection="OneWay"/>
+      <Property id="Allarme"        name="Allarme"        propertytype="Bool" bind="PLCTAG_DI_AllPred1"                bindtype="PLCTag" binddirection="OneWay"/>
       <Property id="Palpatore"      name="Palpatore"      propertytype="Bool" bind="PLCTAG_DI_PalpatorePred1"          bindtype="PLCTag" binddirection="OneWay"/>
       <Property id="LivelloMinimo"  name="LivelloMinimo"  propertytype="Bool" bind="PLCTAG_DI_LivMinPred1"             bindtype="PLCTag" binddirection="OneWay"/>
       <Property id="Vibratore"      name="Vibratore"      propertytype="Bool" bind="PLCTAG_DI_VibratoreP1"             bindtype="PLCTag" binddirection="OneWay"/>
@@ -41,7 +41,7 @@
         <Property id="Comando"              name="Comando"             propertytype="Bool" bind="PLCTAG_NM_CMD_SemiAuto_1"              bindtype="PLCTag" binddirection="OneWayToSource" handler="MotorePropertyHandler"/>
         <Property id="Set"                  name="Set"                 propertytype="Int"  bind="PLCTAG_AO_SetMotore01"                 bindtype="PLCTag" binddirection="OneWayToSource"  handler="MotorePropertyHandler"/>
         <Property id="Ritorno"              name="Ritorno"             propertytype="Bool" bind="PLCTAG_NM_Ritorno_1"                   bindtype="PLCTag" binddirection="OneWay"  handler="MotorePropertyHandler"/>
-        <Property id="Allarme"              name="Allarme"   value="false"          propertytype="Int"  bind="PLCTAG_NM_AllarmeMotore_1"             bindtype="PLCTag" binddirection="OneWay" handler="MotoreAlarmHandler"/>
+        <Property id="Allarme"              name="Allarme"             propertytype="Bool"  bind="PLCTAG_NM_AllarmeMotore_1"             bindtype="PLCTag" binddirection="OneWay" handler="MotoreAlarmHandler"/>
         <Property id="Blocco"               name="Blocco"              propertytype="Bool" bind="PLCTAG_NM_BloccoMotore_1"              bindtype="PLCTag" binddirection="OneWay" handler="MotorePropertyHandler"/>
         <Property id="AccesoForzato"        name="AccesoForzato"       propertytype="Bool" bind="PLCTAG_NM_AccesoForzatoPLC_1"          bindtype="PLCTag" binddirection="OneWay" handler="MotorePropertyHandler"/>
         <Property id="SpentoForzato"        name="SpentoForzato"       propertytype="Bool" bind="PLCTAG_NM_SpentoForzatoPLC_1"          bindtype="PLCTag" binddirection="OneWay" handler="MotorePropertyHandler"/>
@@ -52,7 +52,7 @@
         <Property id="Comando"              name="Comando"             propertytype="Bool" bind="PLCTAG_NM_CMD_SemiAuto_2"              bindtype="PLCTag" binddirection="OneWayToSource" handler="MotorePropertyHandler"/>
         <Property id="Set"                  name="Set"                 propertytype="Int"  bind="PLCTAG_AO_SetMotore02"                 bindtype="PLCTag" binddirection="OneWayToSource"  handler="MotorePropertyHandler"/>
         <Property id="Ritorno"              name="Ritorno"             propertytype="Bool" bind="PLCTAG_NM_Ritorno_2"                   bindtype="PLCTag" binddirection="OneWay"  handler="MotorePropertyHandler"/>
-        <Property id="Allarme"              name="Allarme"     value="false"        propertytype="Int"  bind="PLCTAG_NM_AllarmeMotore_2"             bindtype="PLCTag" binddirection="OneWay" handler="MotoreAlarmHandler"/>
+        <Property id="Allarme"              name="Allarme"             propertytype="Bool"  bind="PLCTAG_NM_AllarmeMotore_2"             bindtype="PLCTag" binddirection="OneWay" handler="MotoreAlarmHandler"/>
         <Property id="Blocco"               name="Blocco"              propertytype="Bool" bind="PLCTAG_NM_BloccoMotore_2"              bindtype="PLCTag" binddirection="OneWay" handler="MotorePropertyHandler"/>
         <Property id="AccesoForzato"        name="AccesoForzato"       propertytype="Bool" bind="PLCTAG_NM_AccesoForzatoPLC_2"          bindtype="PLCTag" binddirection="OneWay" handler="MotorePropertyHandler"/>
         <Property id="SpentoForzato"        name="SpentoForzato"       propertytype="Bool" bind="PLCTAG_NM_SpentoForzatoPLC_2"          bindtype="PLCTag" binddirection="OneWay" handler="MotorePropertyHandler"/>
