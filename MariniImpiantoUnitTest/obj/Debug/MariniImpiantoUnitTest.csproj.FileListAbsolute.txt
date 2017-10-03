@@ -1,5 +1,5 @@
 E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoUnitTest\bin\Debug\MariniImpiantoUnitTest.dll
 E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoUnitTest\bin\Debug\MariniImpiantoUnitTest.pdb
-E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoUnitTest\obj\Debug\MariniImpiantoUnitTest.csprojResolveAssemblyReference.cache
 E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoUnitTest\obj\Debug\MariniImpiantoUnitTest.dll
 E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoUnitTest\obj\Debug\MariniImpiantoUnitTest.pdb
+E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoUnitTest\obj\Debug\MariniImpiantoUnitTest.csprojResolveAssemblyReference.cache

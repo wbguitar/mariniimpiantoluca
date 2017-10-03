@@ -46,8 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventsHandlers\ExampleOfMariniEventsHandlers.cs" />
-    <Compile Include="EventsHandlers\ImpiantoEventsHandlers.cs" />
-    <Compile Include="EventsHandlers\MotoreEventsHandlers.cs" />
+    <Compile Include="EventsHandlers\ImpiantoEventHandler.cs" />
+    <Compile Include="EventsHandlers\Motore1AlarmHandler.cs" />
+    <Compile Include="EventsHandlers\MotoreEventHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

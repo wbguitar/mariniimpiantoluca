@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 // Libreria per mettere a disposizione le strutture per PropertyChanged event.
 using System.ComponentModel;
 // Libreria per usare PropertyInfo all'interno degli handler handler
-using System.Reflection;
+// using System.Reflection;
 
 namespace MariniImpiantoDataModel
 {
-    public interface IMariniEventsHandlers
+    public interface IMariniEventHandler
     {
+        /// <summary>
+        /// Gestisce un evento PropertyChangedEventArgs associato a un sender
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void Handle(object sender, PropertyChangedEventArgs e);
     }
 }

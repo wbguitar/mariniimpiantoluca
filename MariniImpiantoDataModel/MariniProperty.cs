@@ -60,13 +60,14 @@ namespace MariniImpiantoDataModel
         {
             if (node.Attributes != null)
             {
+                // per gestire value devo fare un doppio passaggio, perche' altrimenti se viene scritta nell'XML prima del propertytype
+                // (di default a Int) si rischia di falire il Parse
                 string _s = "";
                 XmlAttributeCollection attrs = node.Attributes;
                 value = null;
                 foreach (XmlAttribute attr in attrs)
                 {
                     //Console.WriteLine("Attribute Name = " + attr.Name + "; Attribute Value = " + attr.Value);
-                    
                     switch (attr.Name)
                     {
 
@@ -89,7 +90,6 @@ namespace MariniImpiantoDataModel
                             _s = attr.Value;
                             break;
                     }
-                    
                 }
 
                 if (!string.IsNullOrEmpty(_s))

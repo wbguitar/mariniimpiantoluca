@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
+using System.Threading.Tasks;
 // Libreria Marini!!!
 using MariniImpiantoDataModel;
 // Libreria per mettere a disposizione le strutture per PropertyChanged event.
@@ -15,17 +15,16 @@ using System.Reflection;
 
 namespace MIConsoleTester.EventsHandlers
 {
-    public class ImpiantoEventsHandlers : IMariniEventsHandlers
+    class Motore1AlarmHandler : IMariniEventHandler
     {
         protected static readonly ILog Logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        public void ImpiantoEventHandler(object sender, PropertyChangedEventArgs e)
+        public void Handle(object sender, PropertyChangedEventArgs e)
         {
-            
-            Console.WriteLine("Sono in ImpiantoEventsHandlers->ImpiantoEventsHandlers, il sender e' {0} e la proprieta' e' : {1}!!!!", (sender as MariniGenericObject).id, e.PropertyName);
-            
+            MariniProperty mp = sender as MariniProperty;
+            string p_name = e.PropertyName;
+            Console.WriteLine("Motore1AlarmHandler->Handler --- sender: {0} proprieta: {1} valore: {2}", mp.path, p_name, mp.value);
             //methodToBeCalledWhenPropertyIsSet();
         }
-
     }
 }

@@ -60,12 +60,18 @@ namespace MIConsoleTester
             try
             {
                 Logger.Info("MariniImpiantoDataManager - Inizio Creazione");
+
+                
+
+
+
                 MariniImpiantoDataManager mariniDataManager = new MariniImpiantoDataManager(
                     XMLfilename, 
-                    new MariniStandardXmlSerializer(), new List<IMariniEventsHandlers>(
-                        new IMariniEventsHandlers[]{                            
-                            new ImpiantoEventsHandlers(),
-                            new MotoreEventsHandlers()
+                    new MariniStandardXmlSerializer(), new List<IMariniEventHandler>(
+                        new IMariniEventHandler[]{                            
+                            new ImpiantoEventHandler(),
+                            new MotoreEventHandler(),
+                            new Motore1AlarmHandler()
                         }));
                 Logger.Info("MariniImpiantoDataManager - Fine Creazione");
                 Console.ReadKey();
@@ -93,8 +99,8 @@ namespace MIConsoleTester
                 string sXML = mariniDataManager.SerializeObject("Impianto");
                 Console.WriteLine("{0}", sXML);
 
-                Console.WriteLine("\n----------> Scatta l'allarme di Motore2");
-                ((MariniProperty)mariniDataManager.GetObjectByPath("Impianto.ZonaPredosaggio.Nastro1.Motore2.Allarme")).value = "true";
+                Console.WriteLine("\n----------> Scatta l'allarme di Motore1");
+                ((MariniProperty)mariniDataManager.GetObjectByPath("Impianto.ZonaPredosaggio.Nastro1.Motore1.Allarme")).value = "true";
                 Console.ReadKey();
             }
             catch (Exception e)

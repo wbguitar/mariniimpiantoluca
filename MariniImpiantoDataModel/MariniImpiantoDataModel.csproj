@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IMariniEventsHandlers.cs" />
+    <Compile Include="IMariniEventHandler.cs" />
     <Compile Include="IMariniSerializer.cs" />
     <Compile Include="MariniBindDirectionEnum.cs" />
     <Compile Include="MariniBindTypeEnum.cs" />

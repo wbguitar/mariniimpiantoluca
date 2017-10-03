@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MariniImpiantoDataModel", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIConsoleTester", "MIConsoleTester\MIConsoleTester.csproj", "{F2011E22-D2E0-4CA4-909C-C53D644B0610}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MariniImpiantoUnitTest", "MariniImpiantoUnitTest\MariniImpiantoUnitTest.csproj", "{3CBA9CA3-D82D-4E73-9FC4-E75F2FF76FED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MariniImpiantoDataModelUnitTest", "MariniImpiantoDataModelUnitTest\MariniImpiantoDataModelUnitTest.csproj", "{7A93E3AA-76EC-4FF3-AB1A-0D8B70469836}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{F2011E22-D2E0-4CA4-909C-C53D644B0610}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2011E22-D2E0-4CA4-909C-C53D644B0610}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2011E22-D2E0-4CA4-909C-C53D644B0610}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3CBA9CA3-D82D-4E73-9FC4-E75F2FF76FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3CBA9CA3-D82D-4E73-9FC4-E75F2FF76FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3CBA9CA3-D82D-4E73-9FC4-E75F2FF76FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3CBA9CA3-D82D-4E73-9FC4-E75F2FF76FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A93E3AA-76EC-4FF3-AB1A-0D8B70469836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A93E3AA-76EC-4FF3-AB1A-0D8B70469836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A93E3AA-76EC-4FF3-AB1A-0D8B70469836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A93E3AA-76EC-4FF3-AB1A-0D8B70469836}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

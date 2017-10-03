@@ -15,24 +15,17 @@ using System.Reflection;
 
 namespace MIConsoleTester.EventsHandlers
 {
-    public class MotoreEventsHandlers : IMariniEventsHandlers
+    public class MotoreEventHandler : IMariniEventHandler
     {
         protected static readonly ILog Logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        public void MotoreAlarmHandler(object sender, PropertyChangedEventArgs e)
+        public void Handle(object sender, PropertyChangedEventArgs e)
         {
             MariniProperty mp = sender as MariniProperty;
             string p_name = e.PropertyName;
-            Console.WriteLine("MotoreEventsHandlers->MotoreAlarmHandlers --- sender: {0} proprieta: {1} valore: {2}", mp.path, p_name, mp.value);
+            Console.WriteLine("MotoreEventHandler->Handler --- sender: {0} proprieta: {1} valore: {2}", mp.path, p_name, mp.value);
             //methodToBeCalledWhenPropertyIsSet();
         }
 
-        public void MotorePropertyHandler(object sender, PropertyChangedEventArgs e)
-        {
-            MariniProperty mp = sender as MariniProperty;
-            string p_name = e.PropertyName;
-            Console.WriteLine("MotoreEventsHandlers->MotoreAlarmHandlers --- sender: {0} proprieta: {1} valore: {2}", mp.path, p_name, mp.value);
-            //methodToBeCalledWhenPropertyIsSet();
-        }
     }
 }

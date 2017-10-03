@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3CBA9CA3-D82D-4E73-9FC4-E75F2FF76FED}</ProjectGuid>
+    <ProjectGuid>{7A93E3AA-76EC-4FF3-AB1A-0D8B70469836}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MariniImpiantoUnitTest</RootNamespace>
-    <AssemblyName>MariniImpiantoUnitTest</AssemblyName>
+    <RootNamespace>MariniImpiantoDataModelUnitTest</RootNamespace>
+    <AssemblyName>MariniImpiantoDataModelUnitTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -50,7 +51,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="MariniImpiantoDataManager_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MariniImpiantoDataModel\MariniImpiantoDataModel.csproj">
+      <Project>{18acd993-c594-49e9-9ddf-7b45c4baa477}</Project>
+      <Name>MariniImpiantoDataModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

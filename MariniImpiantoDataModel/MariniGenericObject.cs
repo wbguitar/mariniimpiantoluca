@@ -157,13 +157,13 @@ namespace MariniImpiantoDataModel
             {
                 if (EqualityComparer<T>.Default.Equals(field, value))
                 {
-                    Console.WriteLine("Sono nella SetField e la proprieta' non e' cambiata");
+                    //Console.WriteLine("Sono nella SetField e la proprieta' non e' cambiata");
                     return false;
                 }
                 field = value;
             }
 
-            Console.WriteLine("Sono nella SetField e lancio OnPropertyChanged(propertyName)");
+            //Console.WriteLine("Sono nella SetField e lancio OnPropertyChanged(propertyName)");
             OnPropertyChanged(propertyName);
 
             return true;
