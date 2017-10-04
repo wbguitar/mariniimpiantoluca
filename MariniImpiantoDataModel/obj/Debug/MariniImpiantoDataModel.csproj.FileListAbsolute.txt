@@ -1,4 +1,0 @@
-E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoDataModel\bin\Debug\MariniImpiantoDataModel.dll
-E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoDataModel\bin\Debug\MariniImpiantoDataModel.pdb
-E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoDataModel\obj\Debug\MariniImpiantoDataModel.dll
-E:\AeL\GIT_Projects\mariniimpiantoluca\MariniImpiantoDataModel\obj\Debug\MariniImpiantoDataModel.pdb
